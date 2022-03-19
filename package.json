@@ -8,7 +8,7 @@
     "start": "npm run build && node ./dst/index.js"
   },
   "author": "suisuisuuui",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/better-sqlite3": "^7.5.0",
     "typescript": "^4.6.2"
