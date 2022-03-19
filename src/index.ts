@@ -22,18 +22,18 @@ const insertMany: BetterSqlite3.Transaction = db.transaction((users) => {
 });
 
 insertMany([
-    { name: 'Joey', age: 2 },
-    { name: 'Sally', age: 4 },
-    { name: 'Junior', age: 1 },
+    { name: 'AAA', age: 11 },
+    { name: 'BBB', age: 12 },
+    { name: 'CCC', age: 13 },
 ]);
 
 // 2. Not use transaction
-insert.run({ name: 'AAA', age: 5 });
+insert.run({ name: 'DDD', age: 25 });
 
 // 3. Standard transaction
 const trantest: BetterSqlite3.Transaction = db.transaction(() => {
     // BEGIN
-    insert.run({ name: 'BBB', age: 5 });
+    insert.run({ name: 'EEE', age: 35 });
     // COMMIT
     // IF error, ROLLBACK
 });
@@ -54,7 +54,7 @@ console.log(get2.all());
 ///////////////////////////////
 // Update
 ///////////////////////////////
-const update: BetterSqlite3.Statement = db.prepare("UPDATE users SET age = 10 WHERE name = 'BBB';")
+const update: BetterSqlite3.Statement = db.prepare("UPDATE users SET age = 22 WHERE name = 'BBB';")
 update.run();
 console.log(get2.all());
 
