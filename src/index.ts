@@ -11,6 +11,18 @@ const db: BetterSqlite3.Database = new BetterSqlite3('test.db', { verbose: conso
 db.exec("CREATE TABLE IF NOT EXISTS users('name' varchar PRIMARY KEY, 'age' INTEGER);");
 
 ///////////////////////////////
+// Search Table
+///////////////////////////////
+const searchTableAll: BetterSqlite3.Statement
+= db.prepare("SELECT name FROM sqlite_master WHERE type = 'table';");
+console.log(searchTableAll.all());
+console.log(searchTableAll.all()[0].name);
+const searchTable: BetterSqlite3.Statement
+= db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'users';");
+console.log(searchTable.all());
+console.log(searchTable.all()[0].name);
+
+///////////////////////////////
 // Insert
 ///////////////////////////////
 const insert: BetterSqlite3.Statement
