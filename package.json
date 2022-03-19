@@ -1,0 +1,19 @@
+{
+  "name": "sqlite-study",
+  "version": "1.0.0",
+  "description": "SQLite study",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./dst/index.js"
+  },
+  "author": "suisuisuuui",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.5.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.5.0"
+  }
+}
